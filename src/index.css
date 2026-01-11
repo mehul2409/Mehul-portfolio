@@ -1,0 +1,207 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=JetBrains+Mono:wght@400;700&display=swap');
+
+:root {
+  --bg-primary: #050505;
+  --bg-secondary: #0a0a0a;
+  --bg-tertiary: #111111;
+
+  --text-primary: #f0f0f0;
+  --text-secondary: #a0a0a0;
+  --text-dim: #505050;
+
+  --accent-primary: #00ff9d;
+  --accent-secondary: #00b8ff;
+  --accent-error: #ff3366;
+
+  --font-sans: 'Inter', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+
+  --grid-color: rgba(255, 255, 255, 0.03);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  line-height: 1.6;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--bg-tertiary);
+  border: 1px solid var(--text-dim);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-dim);
+}
+
+/* Utilities */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.mono {
+  font-family: var(--font-mono);
+}
+
+.text-accent {
+  color: var(--accent-primary);
+}
+
+.text-secondary {
+  color: var(--text-secondary);
+}
+
+.bg-grid {
+  background-size: 40px 40px;
+  background-image:
+    linear-gradient(to right, var(--grid-color) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--grid-color) 1px, transparent 1px);
+}
+
+.section-title {
+  font-family: var(--font-mono);
+  font-size: 1.5rem;
+  color: var(--accent-primary);
+  margin-bottom: 3rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.section-title::after {
+  content: '';
+  height: 1px;
+  flex-grow: 1;
+  background: var(--grid-color);
+}
+
+/* Glitch Effect for Hero Title */
+.glitch-wrapper {
+  position: relative;
+}
+
+@keyframes blink {
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+  }
+}
+
+.cursor-blink::after {
+  content: '_';
+  animation: blink 1s step-end infinite;
+  color: var(--accent-primary);
+}
+
+/* Card Styles */
+.card {
+  background: var(--bg-secondary);
+  border: 1px solid var(--bg-tertiary);
+  padding: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  border-color: var(--accent-primary);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px -10px rgba(0, 255, 157, 0.1);
+}
+
+/* Back to Top Button Hover */
+.back-to-top-btn:hover {
+  background: rgba(0, 255, 157, 0.1) !important;
+  transform: translateY(-3px);
+  box-shadow: 0 0 15px rgba(0, 255, 157, 0.4) !important;
+}
+
+/* Go To Bottom Button Hover */
+.go-to-bottom-btn:hover {
+  background: rgba(255, 51, 102, 0.1) !important;
+  border-color: #ff3366 !important;
+  color: #ff3366 !important;
+  transform: translateY(-3px);
+  box-shadow: 0 0 15px rgba(255, 51, 102, 0.4) !important;
+}
+
+/* Button Styles */
+.btn {
+  display: inline-block;
+  padding: 0.8rem 1.5rem;
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  border: 1px solid var(--accent-primary);
+  color: var(--accent-primary);
+  background: transparent;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.btn:hover {
+  background: rgba(0, 255, 157, 0.1);
+}
+
+.btn-primary {
+  background: var(--accent-primary);
+  color: var(--bg-primary);
+  font-weight: 700;
+}
+
+.btn-primary:hover {
+  background: #00cc7d;
+  box-shadow: 0 0 15px rgba(0, 255, 157, 0.4);
+}
+
+/* Pulsating Dot Animation */
+@keyframes pulse-green {
+  0% {
+    text-shadow: 0 0 0 rgba(0, 255, 157, 0);
+  }
+
+  50% {
+    text-shadow:
+      0 0 15px rgba(0, 255, 157, 1),
+      0 0 30px rgba(0, 255, 157, 0.8),
+      0 0 45px rgba(0, 255, 157, 0.5);
+    color: #00ff9d;
+  }
+
+  100% {
+    text-shadow: 0 0 0 rgba(0, 255, 157, 0);
+  }
+}
+
+.pulsating-dot {
+  display: inline-block;
+  color: var(--accent-primary);
+  animation: pulse-green 2s infinite ease-in-out;
+}
