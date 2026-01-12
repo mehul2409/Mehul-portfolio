@@ -1,5 +1,6 @@
 import React from 'react';
-import { Folder, ExternalLink, Github, Lock } from 'lucide-react';
+import { Folder, ExternalLink, Github, Lock, Smartphone, Download } from 'lucide-react';
+import { LinkPreview } from './ui/LinkPreview';
 
 const Projects = () => {
     const projects = [
@@ -36,6 +37,16 @@ const Projects = () => {
             link: '#',
             private: true
         }
+
+        // {
+        //     title: 'Official Android App',
+        //     description: 'The native mobile companion for my distributed systems. Features real-time alerts, system monitoring, and offline data sync. Available now for Android devices.',
+        //     tech: ['Kotlin', 'Jetpack Compose', 'Offline-First'],
+        //     link: '#play-store-placeholder',
+        //     private: false,
+        //     isMobile: true,
+        //     featured: true // Highlight it
+        // }
     ];
 
     return (
@@ -63,12 +74,12 @@ const Projects = () => {
                                         <Lock size={20} className="text-secondary" />
                                     ) : (
                                         <>
-                                            <a href={project.link} target="_blank" rel="noreferrer" className="text-secondary hover:text-accent">
+                                            <LinkPreview url={project.link} className="text-secondary hover:text-accent">
                                                 <Github size={20} />
-                                            </a>
-                                            <a href={project.link} target="_blank" rel="noreferrer" className="text-secondary hover:text-accent">
+                                            </LinkPreview>
+                                            <LinkPreview url={project.link} className="text-secondary hover:text-accent">
                                                 <ExternalLink size={20} />
-                                            </a>
+                                            </LinkPreview>
                                         </>
                                     )}
                                 </div>

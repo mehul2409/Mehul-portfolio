@@ -1,5 +1,6 @@
 import React from 'react';
 import { Mail, Github, Linkedin } from 'lucide-react';
+import { LinkPreview } from './ui/LinkPreview';
 
 const Contact = () => {
     return (
@@ -17,12 +18,12 @@ const Contact = () => {
                 </a>
 
                 <div style={{ marginTop: '5rem', display: 'flex', justifyContent: 'center', gap: '2rem' }}>
-                    <a href="https://github.com/mehul2409" target="_blank" className="text-secondary hover:text-accent transition-colors">
+                    <LinkPreview url="https://github.com/mehul2409" className="text-secondary hover:text-accent transition-colors">
                         <Github size={24} />
-                    </a>
-                    <a href="https://linkedin.com/in/mehul-gosavi-b8a54b1b7" target="_blank" className="text-secondary hover:text-accent transition-colors">
+                    </LinkPreview>
+                    <LinkPreview url="https://www.linkedin.com/in/mehul-gosavi/" className="text-secondary hover:text-accent transition-colors">
                         <Linkedin size={24} />
-                    </a>
+                    </LinkPreview>
                     <a href="mailto:mehul.dev24@gmail.com" className="text-secondary hover:text-accent transition-colors">
                         <Mail size={24} />
                     </a>

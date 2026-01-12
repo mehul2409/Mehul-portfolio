@@ -10,6 +10,11 @@
   --text-dim: #505050;
 
   --accent-primary: #00ff9d;
+  /* Green */
+  /* --accent-primary: #00e5ff; */
+  /* Cyan */
+  /* --accent-primary: #00b8ff; */
+  /* Blue */
   --accent-secondary: #00b8ff;
   --accent-error: #ff3366;
 
@@ -36,6 +41,8 @@ body {
   line-height: 1.6;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
+  cursor: crosshair;
+  /* Match the quant aesthetic */
 }
 
 /* Custom Scrollbar */
@@ -204,4 +211,31 @@ body {
   display: inline-block;
   color: var(--accent-primary);
   animation: pulse-green 2s infinite ease-in-out;
+}
+
+/* Scanner Animation for Photo Placeholder */
+@keyframes scan-line {
+  0% {
+    top: 5%;
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    top: 95%;
+    opacity: 0;
+  }
+}
+
+.scanner-line {
+  position: absolute;
+  left: 5%;
+  width: 90%;
+  height: 2px;
+  background: var(--accent-primary);
+  box-shadow: 0 0 10px var(--accent-primary);
+  animation: scan-line 3s linear infinite;
 }
