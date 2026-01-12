@@ -1,10 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import { Activity, Wifi, Cpu } from 'lucide-react';
 
-const SystemStatus = ({ showCrosshair, toggleCrosshair }) => {
+const SystemStatus = ({ showCrosshair, toggleCrosshair, toggleHelp }) => {
     const [executionTime, setExecutionTime] = useState(0);
+    const [commandKey, setCommandKey] = useState('⌘');
 
     useEffect(() => {
+        // Detect Platform
+        const isMac = navigator.platform.toUpperCase().indexOf('MAC') >= 0;
+        setCommandKey(isMac ? '⌘' : 'Ctrl + ');
+
         // Simulate execution/render time calculation
         // In a real app, this might track actual metric benchmarks
         const time = (performance.now() % 100) / 1000; // Fake reasonable render time in seconds like 0.04s
@@ -81,6 +86,41 @@ const SystemStatus = ({ showCrosshair, toggleCrosshair }) => {
                     {showCrosshair ? 'ON' : 'OFF'}
                 </span>
             </div>
+
+            <div style={{ width: '1px', height: '12px', background: 'var(--grid-color)' }}></div>
+
+            {/* CMD+K Hint */}
+            <div
+                onClick={() => document.dispatchEvent(new KeyboardEvent('keydown', { key: 'k', metaKey: true }))}
+                style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', cursor: 'pointer' }}
+            >
+                <span style={{
+                    fontSize: '0.75rem',
+                    background: 'var(--accent-primary)',
+                    color: '#000',
+                    padding: '2px 6px',
+                    borderRadius: '3px',
+                    fontWeight: 'bold',
+                    boxShadow: '0 0 8px rgba(0, 255, 157, 0.4)'
+                }}>⌘K</span>
+            </div>
+
+            <div style={{ width: '1px', height: '12px', background: 'var(--grid-color)' }}></div>
+
+            {/* Help Toggle */}
+            <button
+                onClick={toggleHelp}
+                style={{
+                    background: 'transparent',
+                    border: 'none',
+                    color: 'var(--text-secondary)',
+                    cursor: 'pointer',
+                    fontWeight: 'bold',
+                    padding: 0
+                }}
+            >
+                ?
+            </button>
         </div>
     );
 };
