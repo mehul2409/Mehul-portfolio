@@ -27,7 +27,7 @@ export const initDynamicFavicon = () => {
             document.title = "[OFFLINE] Signal Lost";
         } else {
             link.href = originalFavicon;
-            document.title = "Mehul Gosavi | Quant Engineer"; // Original title reset
+            document.title = "Mehul Gosavi | Software Engineer"; // Original title reset
         }
     });
 };

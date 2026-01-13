@@ -16,7 +16,7 @@ const CommandPalette = () => {
         { id: 'skills', label: 'Go to Skills', type: 'navigation', action: () => scrollTo('skills') },
         { id: 'contact', label: 'Go to Contact', type: 'navigation', action: () => scrollTo('contact') },
         { id: 'email', label: 'Copy Email', type: 'action', action: () => copyEmail() },
-        { id: 'resume', label: 'Download Resume', type: 'action', action: () => window.open('#', '_blank') }, // Placeholder
+        { id: 'resume', label: 'Download Resume', type: 'action', action: () => window.open('/Mehul-Gosavi-Resume.pdf', '_blank') }, // Placeholder
         { id: 'github', label: 'Open GitHub', type: 'link', action: () => window.open('https://github.com/mehul2409', '_blank') },
         { id: 'linkedin', label: 'Open LinkedIn', type: 'link', action: () => window.open('https://www.linkedin.com/in/mehul-gosavi/', '_blank') },
         // Conditionally show Theme Toggle
@@ -97,10 +97,27 @@ const CommandPalette = () => {
         }
     }, [isOpen]);
 
+    const itemRefs = useRef([]);
+
+    useEffect(() => {
+        if (isOpen && itemRefs.current[selectedIndex]) {
+            itemRefs.current[selectedIndex].scrollIntoView({
+                behavior: 'smooth',
+                block: 'nearest'
+            });
+        }
+    }, [selectedIndex, isOpen]);
+
+    // Reset loop
+    useEffect(() => {
+        itemRefs.current = itemRefs.current.slice(0, filteredCommands.length);
+    }, [filteredCommands]);
+
     if (!isOpen) return null;
 
     return (
         <div style={{
+            // ... (modal styles same as before)
             position: 'fixed',
             inset: 0,
             background: 'rgba(0,0,0,0.6)',
@@ -158,6 +175,7 @@ const CommandPalette = () => {
                     {filteredCommands.map((cmd, index) => (
                         <div
                             key={cmd.id}
+                            ref={el => itemRefs.current[index] = el}
                             onClick={() => {
                                 cmd.action();
                                 setIsOpen(false);

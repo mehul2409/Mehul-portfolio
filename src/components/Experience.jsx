@@ -45,7 +45,7 @@ const Experience = () => {
                             flexDirection: 'row' // Default to row, mobile could stack via media query in CSS ideally, but inline for now
                         }}>
 
-                            {/* Date Column */}
+                            {/* Date Column - Desktop Only */}
                             <div style={{
                                 minWidth: '160px',
                                 textAlign: 'right',
@@ -54,18 +54,18 @@ const Experience = () => {
                                 flexDirection: 'column',
                                 alignItems: 'flex-end',
                                 gap: '0.5rem'
-                            }} className="mono">
+                            }} className="mono hidden-mobile">
                                 <span className="text-accent" style={{ fontWeight: 'bold' }}>{exp.period}</span>
                                 <span className="text-dim" style={{ fontSize: '0.85rem' }}>{exp.location}</span>
                             </div>
 
-                            {/* Timeline Graphic Column */}
+                            {/* Timeline Graphic Column - Desktop Only */}
                             <div style={{
                                 position: 'relative',
                                 display: 'flex',
                                 flexDirection: 'column',
                                 alignItems: 'center'
-                            }}>
+                            }} className="hidden-mobile">
                                 {/* Dot */}
                                 <div style={{
                                     width: '12px',
@@ -91,6 +91,14 @@ const Experience = () => {
                             {/* Content Card Column */}
                             <div className="card" style={{ flex: 1 }}>
                                 <header style={{ marginBottom: '1.5rem' }}>
+                                    {/* Mobile Date Header */}
+                                    <div className="mobile-only" style={{ marginBottom: '1rem', borderBottom: '1px solid var(--grid-color)', paddingBottom: '0.5rem' }}>
+                                        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '0.5rem' }}>
+                                            <span className="mono text-accent" style={{ fontSize: '0.9rem', fontWeight: 'bold' }}>{exp.period}</span>
+                                            <span className="mono text-dim" style={{ fontSize: '0.8rem' }}>{exp.location}</span>
+                                        </div>
+                                    </div>
+
                                     <h3 style={{ fontSize: '1.3rem', color: '#fff', marginBottom: '0.25rem' }}>
                                         {exp.role} <span className="text-accent">@ {exp.company}</span>
                                     </h3>

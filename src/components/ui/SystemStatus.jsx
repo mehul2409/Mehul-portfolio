@@ -46,7 +46,7 @@ const SystemStatus = ({ showCrosshair, toggleCrosshair, toggleHelp }) => {
             color: 'var(--text-dim)',
             backdropFilter: 'blur(4px)',
             boxShadow: '0 4px 20px rgba(0,0,0,0.5)'
-        }}>
+        }} className="hidden-mobile">
             {/* System Status */}
             <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
                 <Wifi size={12} className="text-accent" />

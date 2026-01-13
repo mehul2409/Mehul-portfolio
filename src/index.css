@@ -239,3 +239,39 @@ body {
   box-shadow: 0 0 10px var(--accent-primary);
   animation: scan-line 3s linear infinite;
 }
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .container {
+    padding: 0 1.5rem;
+  }
+
+  .section-title {
+    font-size: 1.25rem;
+  }
+
+  .hidden-mobile {
+    display: none !important;
+  }
+
+  /* Adjust grid layouts if needed */
+  .card {
+    padding: 1.25rem;
+  }
+
+  /* Hide cursor on touch devices */
+  body {
+    cursor: auto !important;
+  }
+}
+
+/* Utilities for responsive visibility */
+.mobile-only {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .mobile-only {
+    display: block;
+  }
+}
