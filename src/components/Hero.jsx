@@ -61,15 +61,15 @@ const Hero = () => {
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'space-between',
-                    gap: '4rem',
+                    gap: '2rem', // Reduced gap
                     flexWrap: 'wrap-reverse' // Text on top on mobile if wrapped
                 }}>
                     <div style={{ flex: '1', minWidth: '300px' }}>
-                        <p className="mono text-accent" style={{ marginBottom: '1.5rem' }}>
+                        <p className="mono text-accent" style={{ marginBottom: '1rem' }}>
                             Hi, my name is
                         </p>
                         <h1 style={{
-                            fontSize: 'clamp(3rem, 8vw, 5rem)',
+                            fontSize: 'clamp(2.5rem, 5vw, 4rem)', // Reduced max size
                             fontWeight: '700',
                             lineHeight: '1.1',
                             margin: '0 0 1rem 0',
@@ -86,11 +86,11 @@ const Hero = () => {
                             I turn complex problems into production-ready systems<span className="pulsating-dot">.</span>
                         </h2> */}
 
-                        <p className="mono text-secondary" style={{ fontSize: '1.1rem', maxWidth: '600px', marginBottom: '3rem', height: '3rem' }}>
+                        <p className="mono text-secondary" style={{ fontSize: '1.1rem', maxWidth: '600px', marginBottom: '2rem', minHeight: '3.5rem' }}>
                             <span className="text-accent">{'>'}</span> {text}<span className="cursor-blink"></span>
                         </p>
 
-                        <div style={{ display: 'flex', gap: '1.5rem', marginBottom: '4rem' }}>
+                        <div style={{ display: 'flex', gap: '1.5rem', marginBottom: '3rem' }}>
                             <a href="#projects" className="btn btn-primary">
                                 Check out my work
                             </a>

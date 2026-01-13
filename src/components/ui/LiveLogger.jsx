@@ -3,14 +3,18 @@ import { Terminal, X, Minimize2, Maximize2 } from 'lucide-react';
 
 const LiveLogger = () => {
     const [logs, setLogs] = useState([]);
-    const [isMinimized, setIsMinimized] = useState(false);
+    const [isMinimized, setIsMinimized] = useState(true); // Default Closed
     const logsEndRef = useRef(null);
+    const hasInitialized = useRef(false);
 
     // Initial logs on mount
     useEffect(() => {
-        addLog('INFO', 'System initializing...');
-        setTimeout(() => addLog('SUCCESS', 'LiveLogger service started'), 500);
-        setTimeout(() => addLog('INFO', 'Listening for user events...'), 800);
+        if (!hasInitialized.current) {
+            hasInitialized.current = true;
+            addLog('INFO', 'System initializing...');
+            setTimeout(() => addLog('SUCCESS', 'LiveLogger service started'), 500);
+            setTimeout(() => addLog('INFO', 'Listening for user events...'), 800);
+        }
 
         const handleLog = (e) => {
             const { type, message, timestamp } = e.detail;

@@ -7,8 +7,19 @@ const SystemStatus = ({ showCrosshair, toggleCrosshair, toggleHelp }) => {
 
     useEffect(() => {
         // Detect Platform
-        const isMac = navigator.platform.toUpperCase().indexOf('MAC') >= 0;
-        setCommandKey(isMac ? '⌘' : 'Ctrl + ');
+        const userAgent = navigator.userAgent.toLowerCase();
+        const platform = navigator.platform.toLowerCase();
+        const isMac = platform.includes('mac') || userAgent.includes('mac');
+        const isWin = platform.includes('win') || userAgent.includes('win');
+
+        if (isWin) {
+            setCommandKey('Ctrl + ');
+        } else {
+            setCommandKey('⌘');
+        }
+
+        // Log for debugging
+        // setTimeout(() => console.log('Platform detected:', isMac ? 'Mac' : 'Win/Other'), 1000);
 
         // Simulate execution/render time calculation
         // In a real app, this might track actual metric benchmarks
