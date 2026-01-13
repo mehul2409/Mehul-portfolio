@@ -1,4 +1,5 @@
 import React from 'react';
+import { Analytics } from '@vercel/analytics/react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Experience from './components/Experience';
@@ -78,6 +79,7 @@ function App() {
       <LiveLogger />
       <CommandPalette />
       <KeyboardManager showCheatSheet={showHelp} setShowCheatSheet={setShowHelp} />
+      <Analytics />
     </div>
   );
 }
