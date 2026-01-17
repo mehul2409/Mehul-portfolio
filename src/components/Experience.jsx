@@ -9,10 +9,13 @@ const Experience = () => {
             period: 'Aug 2025 - Present',
             location: 'Bangalore, India',
             description: [
-                'Designed and developed scalable backend services using Python, FastAPI, and Go, supporting high-throughput alert ingestion.',
-                'Worked on distributed Kafka-based systems handling over 1 billion alerts, ensuring reliability, fault tolerance, and performance under peak load.',
-                'Investigated and resolved production issues, participating in incident triage and root-cause analysis to improve system stability.',
-                'Contributed to infrastructure and deployment workflows (Devtron, CI/CD) to improve release reliability and operational efficiency.'
+                'Work on backend systems powering customer-facing alert management, processing 1B+ lifetime alerts with continuously increasing throughput.',
+                'Own user access and UI-facing APIs for querying, updating, exporting, and aggregating alert data across 50+ internal services.',
+                'Build and optimize Kafka consumers capable of handling high-volume burst traffic, with strict validation and persistence in PostgreSQL.',
+                'Significantly improved API response times by optimizing SQL queries, indexing strategies, and service-level bottlenecks.',
+                'Improved system reliability by identifying and fixing production memory leaks, reducing error rates and customer escalations.',
+                'Contributed to GDPR compliance, implementing data access and export workflows across existing services.',
+                'Support production operations by debugging Kubernetes workloads (CrashLoopBackOff, logs, env configs) and coordinating deployments via Devtron.'
             ]
         },
         {
@@ -21,10 +24,10 @@ const Experience = () => {
             period: 'Feb 2025 - Jul 2025',
             location: 'Remote',
             description: [
-                'Developed backend components and automation using Python for production systems.',
-                'Built and maintained API/UI test frameworks and integrated them into Jenkins CI/CD.',
-                'Assisted in debugging and resolving issues in containerized, Kubernetes-based services.',
-                'Followed engineering best practices including code reviews, documentation, and agile workflows.'
+                'Contributed to backend components for production, customer-facing systems under real-world load.',
+                'Assisted in debugging containerized Kubernetes services, resolving runtime failures and configuration issues.',
+                'Took ownership of backend modules early, shipping fixes and improvements to production.',
+                'Converted from intern to full-time engineer based on production ownership and reliability contributions.'
             ]
         }
     ];

@@ -35,9 +35,12 @@ const Education = () => {
                             <p className="text-secondary" style={{ fontSize: '0.85rem', marginTop: '0.5rem' }}>
                                 (In association with IBM)
                             </p>
-                            <div style={{ marginTop: '1rem', paddingTop: '1rem', borderTop: '1px solid var(--grid-color)' }}>
+                            {/* <div style={{ marginTop: '1rem', paddingTop: '1rem', borderTop: '1px solid var(--grid-color)' }}>
                                 <p className="mono text-accent">CGPA: 7.11 / 10</p>
-                            </div>
+                            </div> */}
+                        </div>
+                        <div style={{ marginTop: '1rem', paddingTop: '1rem', borderTop: '1px solid var(--grid-color)' }}>
+                            <p className="text-quiet"> I prioritize learning that directly translates to production-grade systems.</p>
                         </div>
                     </div>
 
@@ -55,23 +58,23 @@ const Education = () => {
                             <li style={{ marginBottom: '1.5rem', display: 'flex', gap: '1rem' }}>
                                 <span className="text-accent">▹</span>
                                 <div>
-                                    <h5 style={{ color: 'var(--text-primary)', fontSize: '1rem' }}>IBM Specialization in AI/ML</h5>
-                                    <p className="text-secondary" style={{ fontSize: '0.9rem' }}>Comprehensive coursework in Machine Learning algorithms and data science.</p>
+                                    <h5 style={{ color: 'var(--text-primary)', fontSize: '1rem' }}>Financial Markets — Yale University</h5>
+                                    <p className="text-secondary" style={{ fontSize: '0.9rem' }}>Built foundational understanding of market structure, risk, and trading systems</p>
                                 </div>
                             </li>
                             <li style={{ marginBottom: '1.5rem', display: 'flex', gap: '1rem' }}>
                                 <span className="text-accent">▹</span>
                                 <div>
-                                    <h5 style={{ color: 'var(--text-primary)', fontSize: '1rem' }}>Backend Development Mastery</h5>
-                                    <p className="text-secondary" style={{ fontSize: '0.9rem' }}>Advanced patterns in Distributed Systems and Microservices (Self-Paced).</p>
+                                    <h5 style={{ color: 'var(--text-primary)', fontSize: '1rem' }}>Introduction to Data Science Specialization — IBM</h5>
+                                    <p className="text-secondary" style={{ fontSize: '0.9rem' }}>Hands-on exposure to data processing, analysis, and applied ML workflows</p>
                                 </div>
                             </li>
                             {/* Placeholder for future certs */}
                             <li style={{ display: 'flex', gap: '1rem' }}>
                                 <span className="text-accent">▹</span>
                                 <div>
-                                    <h5 style={{ color: 'var(--text-primary)', fontSize: '1rem' }}>Algorithmic Trading</h5>
-                                    <p className="text-secondary" style={{ fontSize: '0.9rem' }}>Applied quantitative analysis strategies (Proprietary Research).</p>
+                                    <h5 style={{ color: 'var(--text-primary)', fontSize: '1rem' }}>Advanced Machine Learning on Google Cloud — Google Cloud</h5>
+                                    <p className="text-secondary" style={{ fontSize: '0.9rem' }}>Focused on production ML pipelines and scalable deployment concepts</p>
                                 </div>
                             </li>
                         </ul>
