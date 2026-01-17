@@ -113,7 +113,7 @@ const SystemStatus = ({ showCrosshair, toggleCrosshair, toggleHelp }) => {
                     borderRadius: '3px',
                     fontWeight: 'bold',
                     boxShadow: '0 0 8px rgba(0, 255, 157, 0.4)'
-                }}>⌘K</span>
+                }}>{commandKey}K</span>
             </div>
 
             <div style={{ width: '1px', height: '12px', background: 'var(--grid-color)' }}></div>
