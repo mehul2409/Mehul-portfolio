@@ -66,7 +66,7 @@ const Hero = () => {
                 }}>
                     <div style={{ flex: '1', minWidth: '300px' }}>
                         <p className="mono text-accent" style={{ marginBottom: '1rem' }}>
-                            Hi, my name is
+                            Hi, I am
                         </p>
                         <h1 style={{
                             fontSize: 'clamp(2.5rem, 5vw, 4rem)', // Reduced max size
