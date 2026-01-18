@@ -3,6 +3,18 @@ import { logEvent } from '../../utils/logger';
 
 const KeyboardManager = ({ showCheatSheet, setShowCheatSheet }) => {
     // State lifted to App.jsx
+    const [commandKey, setCommandKey] = useState('CMD');
+
+    useEffect(() => {
+        // Platform detection
+        const platform = navigator.platform.toLowerCase();
+        const userAgent = navigator.userAgent.toLowerCase();
+        if (platform.includes('win') || userAgent.includes('win')) {
+            setCommandKey('Ctrl');
+        } else {
+            setCommandKey('CMD');
+        }
+    }, []);
 
     useEffect(() => {
         const handleKeyPress = (e) => {
@@ -55,7 +67,7 @@ const KeyboardManager = ({ showCheatSheet, setShowCheatSheet }) => {
                 <h3 className="mono text-accent" style={{ marginBottom: '1.5rem', textAlign: 'center' }}>KEYBOARD SHORTCUTS</h3>
                 <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', color: 'var(--text-secondary)' }}>
                     <div style={{ display: 'flex', justifyContent: 'space-between' }}><span className="mono bold">J / K</span> <span>Scroll Down / Up</span></div>
-                    <div style={{ display: 'flex', justifyContent: 'space-between' }}><span className="mono bold">CMD+K</span> <span>Command Palette</span></div>
+                    <div style={{ display: 'flex', justifyContent: 'space-between' }}><span className="mono bold">{commandKey}+K</span> <span>Command Palette</span></div>
                     <div style={{ display: 'flex', justifyContent: 'space-between' }}><span className="mono bold">1-5</span> <span>Jump Sections</span></div>
                     <div style={{ display: 'flex', justifyContent: 'space-between' }}><span className="mono bold">?</span> <span>Toggle Help</span></div>
                 </div>

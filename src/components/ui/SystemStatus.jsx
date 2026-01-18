@@ -112,6 +112,7 @@ const SystemStatus = ({ showCrosshair, toggleCrosshair, toggleHelp }) => {
                     padding: '2px 6px',
                     borderRadius: '3px',
                     fontWeight: 'bold',
+                    whiteSpace: 'nowrap',
                     boxShadow: '0 0 8px rgba(0, 255, 157, 0.4)'
                 }}>{commandKey}K</span>
             </div>
